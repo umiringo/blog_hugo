@@ -17,7 +17,7 @@ pygmentsStyle = "monokai"
 markup = "markdown" # 格式化 markdown
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 10                                           # 首页每页显示的文章数
-disqusShortname = ""      # disqus_shortname
+#disqusShortname = ""      # disqus_shortname
 # googleAnalytics = "UA-138883536-1"      # UA-XXXXXXXX-X
 copyright = "© Copyright 2019 umiringo"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
