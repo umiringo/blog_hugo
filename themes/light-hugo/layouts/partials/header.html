@@ -6,7 +6,10 @@
 		<title>{{ .Title }}</title>
 		<link rel="canonical" href="{{ .Permalink }}">
 		<link rel="stylesheet" href="/css/syntax.css" />
-		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 		{{ range .AlternativeOutputFormats -}}
 		    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 		{{ end -}}
