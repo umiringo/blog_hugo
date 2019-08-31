@@ -19,16 +19,14 @@ before_deploy:
   - eval $(ssh-agent -s)
   - chmod 600 ~/my_travis/travis
   - ssh-add ~/my_travis/travis
-  - cho -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
+after_success:
+  - rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+
+branches:
+  only:
+    - master
 
 deploy:
- provider: script
   skip-cleanup: true
-  script: rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
-  on:
-    branch: master
-
-env:
-  global:
-    - PRODUCTION: true
-    - HUGO_RELEASE: 0.57.2
