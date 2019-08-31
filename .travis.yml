@@ -32,6 +32,3 @@ env:
   global:
     - PRODUCTION=true
     - HUGO_RELEASE=0.57.2
-    - secure: <a long string of random looking ASCII chars ending with an equal sign>
-    - secure: <another long ASCII string ending with an equal sign>
-    - secure: <and another long ASCII string ending with an equal sign>
