@@ -21,12 +21,13 @@ before_deploy:
   - ssh-add ~/my_travis/travis
   - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
-after_success:
-  - rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+deploy:
+  - provider: script
+    script: rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+    skip_cleanup: true
+    on:
+      branch: source # or master if you are using the two-repository approach
 
 branches:
   only:
     - master
-
-deploy:
-  skip-cleanup: true
