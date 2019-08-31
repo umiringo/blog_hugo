@@ -15,8 +15,7 @@ script:
   - hugo
 
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_7051ac01cf89_key -iv $encrypted_7051ac01cf89_iv
-    -in .travis/travis.enc -out ~/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_3c7444b0f500_key -iv $encrypted_3c7444b0f500_iv -in travis.enc -out ~\/my_travis/travis -d  
   - eval $(ssh-agent -s)
   - chmod 600 ~/.ssh/id_rsa
   - cho -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
