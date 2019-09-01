@@ -15,18 +15,18 @@ script:
   - hugo
 
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_3c7444b0f500_key -iv $encrypted_3c7444b0f500_iv -in travis.enc -out ~/my_travis/travis -d  
+  - openssl aes-256-cbc -K $encrypted_3c7444b0f500_key -iv $encrypted_3c7444b0f500_iv -in travis.enc -out /tmp/travis_rsa -d  
   - eval $(ssh-agent -s)
-  - chmod 600 ~/my_travis/travis
-  - ssh-add ~/my_travis/travis
+  - chmod 600 /tmp/travis_rsa
+  - ssh-add /tmp/travis_rsa
   - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 deploy:
   - provider: script
-    script: rsync -r --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+    script: rsync -r --port ${DEPLOY_PORT} --quiet --delete-after ${TRAVIS_BUILD_DIR}/public/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
     skip_cleanup: true
     on:
-      branch: master # or master if you are using the two-repository approach
+      branch: master
 
 branches:
   only:
