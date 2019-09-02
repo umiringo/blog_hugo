@@ -14,7 +14,7 @@ body {
     height:         100%;
     margin:         0;
     padding:        0;
-    background:     white;
+    background:     #c0c0c0;
     font-family:    $font-family-base;
     font-size:      map-get($font-size, base);
     line-height:    $line-height-base;
@@ -102,7 +102,7 @@ table {
     }
     tr {
         &:nth-child(2n) {
-            background: #f7f8f8;
+            background: #c0c0c0;
         }
     }
 }
@@ -111,7 +111,7 @@ hr {
     margin:     1.5em 0 0;
     outline:    none;
     border:     none;
-    border-top: 1px solid #eef2f8;
+    border-top: 1px solid #c0c0c0;
 }
 
 dl {
