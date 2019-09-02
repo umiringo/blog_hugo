@@ -12,14 +12,14 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseURL = "http://umiringo.com/"
+baseURL = "https://umiringo.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "umiringo's nest"
 theme = "hugo-tranquilpeak-theme"
-#isqusShortname = "hugo-tranquilpeak-theme"
+#disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
-paginate = 8
+paginate = 7
 canonifyurls = true
 
 [permalinks]
@@ -32,9 +32,9 @@ canonifyurls = true
 
 [author]
   name = "umiringo"
-  bio = "Super bio with markdown support **COOL**"
-  job = "Game Developer"
-  location = "Japan"
+  bio = "fuck gfw"
+  job = "game developer"
+  location = "???"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "umiringo42@gmail.com"
   # Your profile picture
@@ -53,49 +53,31 @@ canonifyurls = true
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
   url = "/"
 [[menu.main]]
-  weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
-  url = "/categories"
-[[menu.main]]
-  weight = 3
-  identifier = "tags"
-  name = "Tags"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
-  url = "/tags"
-[[menu.main]]
   weight = 4
   identifier = "archives"
   name = "Archives"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
   url = "/archives"
-[[menu.main]]
-  weight = 5
-  identifier = "about"
-  name = "About"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/#about"
+# [[menu.main]]
+#   weight = 2
+#   identifier = "categories"
+#   name = "Categories"
+#   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
+#   url = "/categories"
+# [[menu.main]]
+#   weight = 3
+#   identifier = "tags"
+#   name = "Tags"
+#   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
+#   url = "/tags"
 
-[[menu.links]]
-  weight = 1
-  identifier = "github"
-  name = "GitHub"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/kakawait"
-[[menu.links]]
-  weight = 2
-  identifier = "stackoverflow"
-  name = "Stack Overflow"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
-  url = "https://stackoverflow.com/users/636472/kakawait"
+# [[menu.links]]
+#   weight = 1
+#   identifier = "github"
+#   name = "GitHub"
+#   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+#   url = "https://github.com/kakawait"
 
-[[menu.misc]]
-  weight = 1
-  identifier = "rss"
-  name = "RSS"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
-  url = "/index.xml"
 
 [params]
   # Customize date format use to render blog post date, categories and other
@@ -118,7 +100,7 @@ canonifyurls = true
   # If false it will flat categories.
   hierarchicalCategories = true
 
-  description = "Hugo tranquilpeak theme demo"
+  description = "fuck gfw"
 
   # Customization
   # Define the behavior of the sidebar
@@ -133,7 +115,7 @@ canonifyurls = true
   #    large sidebar is swiped on all lower screens
   # 5: Display header bar on all screens and large sidebar is swiped on large screen
   # 6: Display header bar on all screens and medium sidebar is swiped
-  sidebarBehavior = 1
+  sidebarBehavior = 2
 
   # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
   # There is many free CDN like Cloudinary or you can also use indirectly
@@ -158,7 +140,7 @@ canonifyurls = true
   autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
-  # favicon = "/favicon.png"
+  favicon = "/images/favicon.ico"
 
   # Header configuration
   # The link at the right of the header is customizable
@@ -196,15 +178,10 @@ canonifyurls = true
     icon = "fa-twitter"
     url = "https://twitter.com/intent/tweet?text=%s"
 
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
-
   [params.header.rightLink]
     class = ""
     icon = ""
-    url = "/#about"
+    url = "/"
 
   # Customize link of author avatar in sidebar
   # [params.sidebar.profile]
